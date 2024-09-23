@@ -7,6 +7,7 @@
       'Version' => '1.0.0',
       'Author' => 'Brian Ravn Pedersen',
       'Created' => '2024-09-18',
+      'Documentation' => 'See router.php'
       ];
 
     private static $keys = ['id', 'entitycode', 'entity', 'user_id', 'username', 'email']; 
