@@ -47,8 +47,9 @@
   header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
   header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
-  if ( 1 === 1 ) {
-    echo "The World does stand!";
+
+  if ( 1 === 2) {
+    echo "The World does not stand anymore!";
   }
 
   // Require dependencies
