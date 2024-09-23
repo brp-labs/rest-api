@@ -47,6 +47,10 @@
   header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
   header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
+  if ( 1 === 2) {
+    echo "The World does not stand anymore!";
+  }
+
   // Require dependencies
   require_once 'Database.php';
   require_once 'Model.php';
