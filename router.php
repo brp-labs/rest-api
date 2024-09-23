@@ -23,6 +23,7 @@
           Ex. ...router.php
         Search for posts with q-key:
           Ex. ...router.php?q=<querystring> (fields queried: username, email)
+          The contains-method is beeing used i SQL, ie. LIKE '%<querystring>%' 
 
       UPDATE: Use HTTP method: POST
         Send body in JSON-format with the fields that need to be changed.
