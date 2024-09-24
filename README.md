@@ -2,7 +2,7 @@
 Design Pattern: MVC (Model, View, Controller)<br/>
 Author: Brian Ravn Pedersen<br/>
 Created: 2024-09-18<br/>
-Files: index.php, Database.php, Model.php, Controller.php<br/>
+Files: index.php, Database.php, Model.php, Controller.php, README.md<br/>
 Languages used: PHP, SQL<br/>
 Repository: github.com/brp-labs/rest-api<br/>
 <br/>
@@ -17,11 +17,11 @@ The REST API has been tested with Postman API Platform (desktop) against a MySQL
       <i>e.g.</i> <code>{ "username": "John Doe", "email": "john&#64;<!-- -->doe&#46;com", "entity": "Business Intelligence" }</code><br/>
 <br/>
 <b>READ:</b> Use HTTP method GET to read or search for a post in the database. Response is returned in JSON format.<br/>
-    <b>Read single</b> post (with <code>id</code>=23):<br/>
+    <b>Read single</b> post (use the <code>id</code>-key):<br/>
     <i>e.g.</i> <code>../index.php?id=23</code><br/>
     <b>Read all</b> posts:<br/>
       <i>e.g.</i> <code>../index.php</code><br/>
-    <b>Search</b> for posts with the q-key and a specified query string:<br/>
+    <b>Search</b> for posts with the <code>q</code>-key and a specified query string:<br/>
       <i>e.g.</i> <code>../index.php?q=john</code><br/>
       The queried table fields are: username, email. The contains-method is beeing used in SQL, ie. LIKE '%<querystring\>%'<br/>
 <br/>
