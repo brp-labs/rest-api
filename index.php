@@ -1,45 +1,13 @@
 <?php
 
-  /*  REST API (CRUD): Design Pattern: MVC (Model, View, Controller)
-      Version: 1.0.0
-      Author: Brian Ravn Pedersen
-      Created: 2024-09-18
-      Files: index.php, Database.php, Model.php, Controller.php
-      Application has been tested and run on Postman.
-      ______________________________________________________________
-
-      CREATE: Use HTTP method: POST
-        Send body in JSON-format with at leats the required keys (username, email).
-          E.g. { 
-               "username": "John Doe",
-               "email": "john@doe.com",
-               "entity": "Business Intelligence"
-              }
-
-      READ: Use HTTP method: GET. Response is returned in JSON-format.  
-        Read single post (with id=23):
-          E.g. ...router.php?id=23
-        Read all posts:
-          E.g.. ...router.php
-        Search for posts with q-key:
-          E.g. ...router.php?q=<querystring> (fields queried: username, email)
-          The contains-method is beeing used i SQL, ie. LIKE '%<querystring>%'
-
-
-      UPDATE: Use HTTP method: POST
-        Send body in JSON-format with the fields that need to be changed.
-        Required keys must not be emptied. Use the id-key in the body in order
-        to identify the post to update. The id-key is mandatory.
-          E.g. {
-                "id": 23,
-                "entity": "Development Division"
-              }
-        
-      DELETE: Use HTTP method: GET
-        Delete post (with id=23):
-          E.g. ...router.php?id=23
-    
-      ______________________________________________________________
+/* 
+    REST API (CRUD) - with the ability to do a string search as well.
+    Design Pattern: MVC (Model, View, Controller)
+    Author: Brian Ravn Pedersen
+    Created: 2024-09-18
+    Files: index.php, Database.php, Model.php, Controller.php
+    Repository: github.com/brp-labs/rest-api
+    ______________________________________________________________
 */
     
   // Headers
