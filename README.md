@@ -23,7 +23,7 @@ The REST API has been tested with Postman API Platform (desktop) against a MySQL
       <i>e.g.</i> <code>../index.php</code><br/>
     <b>Search</b> for posts with q-key and a specified query string:<br/>
       <i>e.g.</i> <code>../index.php?q=john</code><br/>
-      The queried fields are: username, email. The contains-method is beeing used in SQL, ie. LIKE '%<querystring\>%'<br/>
+      The queried table fields are: username, email. The contains-method is beeing used in SQL, ie. LIKE '%<querystring\>%'<br/>
 <br/>
 <b>UPDATE:</b> Use HTTP method PUT to update a post in the database.<br/>
     Submit body in JSON format with the keys that need to be changed. Required keys must not be empty (see below). Use the mandatory <code>id</code>-key in the body to identify the post to update.<br/>
