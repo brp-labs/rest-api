@@ -14,23 +14,22 @@ Repository: github.com/brp-labs/rest-api<br/>
     Submit body in JSON-format with at leats the required keys (username, email):<br/>
       e.g. <code>{ "username": "John Doe", "email": "john&#64;<!-- -->doe&#46;com", "entity": "Business Intelligence" }</code><br/>
 <br/>
-<b>READ:</b> Use HTTP method GET to read or search for a post. Response is returned in JSON-format.<br/>
-    <b>Read single post</b> (with id=23):<br/>
+<b>READ:</b> Use HTTP method GET to read or search for a post. Response is returned in JSON format.<br/>
+    <b>Read single</b> post (with <code>id</code>=23):<br/>
     e.g. <code>../index.php?id=23</code><br/>
-    <b>Read all posts</b>:<br/>
+    <b>Read all</b> posts:<br/>
       e.g. <code>../index.php</code><br/>
     <b>Search</b> for posts with q-key:<br/>
       e.g. <code>../index.php?q=<querystring\></code> (fields queried: username, email)<br/>
       The contains-method is beeing used i SQL, ie. LIKE '%<querystring\>%'<br/>
 <br/>
 <b>UPDATE:</b> Use HTTP method POST to update a post.<br/>
-    Send body in JSON-format with the fields that need to be changed.<br/>
-    Required keys must not be emptied. Use the id-key in the body in order<br/>
-    to identify the post to update. The id-key is mandatory.<br/>
+    Submit body in JSON format with the fields that need to be changed.<br/>
+    Required keys must not be empty. Use the <code>id</code>-key in the body to identify the post to update. The<code>id</code>-key is mandatory.<br/>
       e.g. <code>{ "id": 23, "entity": "Development Division" }</code><br/>
 <br/>
 <b>DELETE:</b> Use HTTP method GET to delete a post.<br/>
-    Delete post (with id=23):<br/>
+    Delete post (with <code>id</code>=23):<br/>
       e.g. <code>../index.php?id=23</code><br/>
 <br/>
 <hr/>
