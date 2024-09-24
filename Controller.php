@@ -2,7 +2,7 @@
 
   class Controller {
 
-    private static $classInfo = [
+    private static $header = [
       'Product' => 'REST API (CRUD)',
       'Version' => '1.0.0',
       'Author' => 'Brian Ravn Pedersen',
@@ -86,7 +86,7 @@
     public function read_all() {
       $result = $this->model->read_all();
       if ($result->rowCount() > 0) {
-        $posts['Info'] = self::$classInfo;
+        $posts['Info'] = self::$header;
         $posts['Data'] = [];
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
           array_push($posts['Data'], $row);
@@ -104,7 +104,7 @@
       $backtrace = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT);
       $result = $this->model->read_single($id);
       if ($result->rowCount() > 0) {
-        $post['Info'] = self::$classInfo;
+        $post['Info'] = self::$header;
         $post['Data'] = $result->fetch(PDO::FETCH_ASSOC);
         http_response_code(200); // OK
         // Check if read_single is called from within the current class
@@ -169,7 +169,7 @@
       $search = self::sanitize($search);
       $result = $this->model->search($search);
       if ($result->rowCount() > 0) {
-        $posts['Info'] = self::$classInfo;
+        $posts['Info'] = self::$header;
         $posts['Data'] = [];
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
           array_push($posts['Data'], $row);

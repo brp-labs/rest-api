@@ -14,7 +14,7 @@ The REST API has been tested with Postman API Platform (desktop) against a MySQL
 
 <b>CREATE:</b> Use HTTP method POST to create a new post in the database.<br/>
     Submit body in JSON format with at leats the required keys (username, email):<br/>
-      e.g. <code>{ "username": "John Doe", "email": "john&#64;<!-- -->doe&#46;com", "entity": "Business Intelligence" }</code><br/>
+      <i>e.g.</i> <code>{ "username": "John Doe", "email": "john&#64;<!-- -->doe&#46;com", "entity": "Business Intelligence" }</code><br/>
 <br/>
 <b>READ:</b> Use HTTP method GET to read or search for a post in the database. Response is returned in JSON format.<br/>
     <b>Read single</b> post (with <code>id</code>=23):<br/>
