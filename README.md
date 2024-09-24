@@ -13,7 +13,7 @@ The REST API has been tested with Postman API Platform (desktop) against a MySQL
 <h3>How to use the REST API with e.g. Postman API Platform</h3>
 
 <b>CREATE:</b> Use HTTP method POST to create a new post in the database.<br/>
-    Submit body in JSON format with at leats the required keys (username, email):<br/>
+    Submit body in JSON format with at leats the required keys (see below):<br/>
       <i>e.g.</i> <code>{ "username": "John Doe", "email": "john&#64;<!-- -->doe&#46;com", "entity": "Business Intelligence" }</code><br/>
 <br/>
 <b>READ:</b> Use HTTP method GET to read or search for a post in the database. Response is returned in JSON format.<br/>
@@ -26,7 +26,7 @@ The REST API has been tested with Postman API Platform (desktop) against a MySQL
       The queried fields are: username, email. The contains-method is beeing used in SQL, ie. LIKE '%<querystring\>%'<br/>
 <br/>
 <b>UPDATE:</b> Use HTTP method PUT to update a post in the database.<br/>
-    Submit body in JSON format with the keys that need to be changed. Required keys must not be empty. Use the <code>id</code>-key in the body to identify the post to update. The<code>id</code>-key is mandatory.<br/>
+    Submit body in JSON format with the keys that need to be changed. Required keys must not be empty (see below). Use the mandatory <code>id</code>-key in the body to identify the post to update.<br/>
       <i>e.g.</i> <code>{ "id": 23, "entity": "Development Division" }</code><br/>
 <br/>
 <b>DELETE:</b> Use HTTP method DELETE to delete a post in the database. Use the mandatory <code>id</code> to identify the post to delete.<br/>
