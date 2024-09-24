@@ -47,7 +47,16 @@
       echo json_encode(["Error" => $stmt->error]);
       return false;
     }
-
+    
+    // Read single post
+    public function read_single($id) {
+      $sql = "SELECT * FROM $this->table WHERE id = :id LIMIT 1";
+      $stmt = $this->conn->prepare($sql);
+      $stmt->bindParam(':id', $id);
+      $stmt->execute();
+      return $stmt;
+    }
+    
     // Read all posts
     public function read_all() {
       $sql = "SELECT * FROM $this->table";
@@ -56,11 +65,12 @@
       return $stmt;
     }
     
-    // Read single post
-    public function read_single($id) {
-      $sql = "SELECT * FROM $this->table WHERE id = :id LIMIT 1";
+    // Search post (by the properties 'username' and 'email')
+    public function search($search) {
+      $sql = "SELECT * FROM $this->table WHERE username LIKE :username OR email LIKE :email";
       $stmt = $this->conn->prepare($sql);
-      $stmt->bindParam(':id', $id);
+      $stmt->bindValue(':username', '%'.$search.'%');
+      $stmt->bindValue(':email', '%'.$search.'%');
       $stmt->execute();
       return $stmt;
     }
@@ -98,16 +108,6 @@
         }
       } 
       return false;
-    }
-
-    // Search post (by the properties 'username' and 'email')
-    public function search($search) {
-      $sql = "SELECT * FROM $this->table WHERE username LIKE :username OR email LIKE :email";
-      $stmt = $this->conn->prepare($sql);
-      $stmt->bindValue(':username', '%'.$search.'%');
-      $stmt->bindValue(':email', '%'.$search.'%');
-      $stmt->execute();
-      return $stmt;
     }
 
   } // end: class Model
