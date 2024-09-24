@@ -12,7 +12,7 @@ Repository: github.com/brp-labs/rest-api<br/>
 
 <b>CREATE:</b> Use HTTP method: POST<br/>
     Send body in JSON-format with at leats the required keys (username, email):<br/>
-      e.g. <code>{ "username": "John Doe", "email": "john&#64;doe&#46;com", "entity": "Business Intelligence" }</code><br/>
+      e.g. <code>{ "username": "John Doe", "email": "john&#64;<!-- -->doe&#46;com", "entity": "Business Intelligence" }</code><br/>
 <br/>
 <b>READ:</b> Use HTTP method: GET. Response is returned in JSON-format.<br/>
     Read single post (with id=23):<br/>
