@@ -26,8 +26,7 @@ The REST API has been tested with Postman API Platform (desktop) against a MySQL
       The queried fields are: username, email. The contains-method is beeing used i SQL, ie. LIKE '%<querystring\>%'<br/>
 <br/>
 <b>UPDATE:</b> Use HTTP method POST to update a post in the database.<br/>
-    Submit body in JSON format with the fields that need to be changed.<br/>
-    Required keys must not be empty. Use the <code>id</code>-key in the body to identify the post to update. The<code>id</code>-key is mandatory.<br/>
+    Submit body in JSON format with the keys that need to be changed. Required keys must not be empty. Use the <code>id</code>-key in the body to identify the post to update. The<code>id</code>-key is mandatory.<br/>
       e.g. <code>{ "id": 23, "entity": "Development Division" }</code><br/>
 <br/>
 <b>DELETE:</b> Use HTTP method GET to delete a post in the database.<br/>
