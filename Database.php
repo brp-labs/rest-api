@@ -4,7 +4,7 @@
 
     // Database configuration
     private $host = 'localhost';
-    private $dbname = 'fk';
+    private $dbname = 'db';
     private $username = 'root';
     private $password = '';
 

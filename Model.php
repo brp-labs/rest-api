@@ -11,6 +11,22 @@
       $this->table = Database::$table;
     }
 
+    // Check if the specified key-value pair already exists in the table
+    public function isKeyValueUnique($key, $value) {
+      $sql = "SELECT id FROM $this->table WHERE $key = :value LIMIT 1";
+      $stmt = $this->conn->prepare($sql);
+      $stmt->bindParam(':value', $value);
+      if ($stmt->execute()) {
+        if ($stmt->rowCount() > 0) {
+          return false;
+        }
+        return true;
+      } else {
+        echo json_encode(["Error" => $stmt->error]);
+        return false;
+      }
+    }
+
     // Create post
     public function create($entitycode, $entity, $user_id, $username, $email) {
       $sql = "INSERT INTO $this->table (entitycode, entity, user_id, username, email) VALUES (:entitycode, :entity, :user_id, :username, :email)";
@@ -33,7 +49,7 @@
     }
 
     // Read all posts
-    public function read() {
+    public function read_all() {
       $sql = "SELECT * FROM $this->table";
       $stmt = $this->conn->prepare($sql);
       $stmt->execute();
