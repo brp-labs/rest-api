@@ -21,17 +21,20 @@ The REST API has been tested with Postman API Platform (desktop) against a MySQL
     <i>e.g.</i> <code>../index.php?id=23</code><br/>
     <b>Read all</b> posts:<br/>
       <i>e.g.</i> <code>../index.php</code><br/>
-    <b>Search</b> for posts with q-key:<br/>
-      <i>e.g.</i> <code>../index.php?q=<querystring\></code><br/>
+    <b>Search</b> for posts with q-key and a specified query string:<br/>
+      <i>e.g.</i> <code>../index.php?q=john@</code><br/>
       The queried fields are: username, email. The contains-method is beeing used in SQL, ie. LIKE '%<querystring\>%'<br/>
 <br/>
 <b>UPDATE:</b> Use HTTP method PUT to update a post in the database.<br/>
     Submit body in JSON format with the keys that need to be changed. Required keys must not be empty. Use the <code>id</code>-key in the body to identify the post to update. The<code>id</code>-key is mandatory.<br/>
       <i>e.g.</i> <code>{ "id": 23, "entity": "Development Division" }</code><br/>
 <br/>
-<b>DELETE:</b> Use HTTP method DELETE to delete a post in the database. Use a specified <code>id</code>. The<code>id</code>-key is mandatory.<br/>
+<b>DELETE:</b> Use HTTP method DELETE to delete a post in the database. Use the <code>id</code> to identify the post to delete. The<code>id</code>-key is mandatory.<br/>
     Delete post (with <code>id</code>=23):<br/>
       <i>e.g.</i> <code>../index.php?id=23</code><br/>
+<br/>
+
+<b>Keys, Reqiured Keys, Unique Keys</b><br/>
 <br/>
 <hr/>
 
