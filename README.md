@@ -21,7 +21,7 @@ The REST API has been tested with Postman API Platform (desktop) against a MySQL
     <i>e.g.</i> <code>../index.php?id=23</code><br/>
     <b>Read all</b> posts:<br/>
       <i>e.g.</i> <code>../index.php</code><br/>
-    <b>Search</b> for posts in the database with the q-key and a specified query string:<br/>
+    <b>Search</b> for posts with the q-key and a specified query string:<br/>
       <i>e.g.</i> <code>../index.php?q=john</code><br/>
       The queried table fields are: username, email. The contains-method is beeing used in SQL, ie. LIKE '%<querystring\>%'<br/>
 <br/>
