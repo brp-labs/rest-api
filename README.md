@@ -22,7 +22,7 @@ The REST API has been tested with Postman API Platform (desktop) against a MySQL
     <b>Read all</b> posts:<br/>
       <i>e.g.</i> <code>../index.php</code><br/>
     <b>Search</b> for posts with q-key and a specified query string:<br/>
-      <i>e.g.</i> <code>../index.php?q=john@</code><br/>
+      <i>e.g.</i> <code>../index.php?q=john</code><br/>
       The queried fields are: username, email. The contains-method is beeing used in SQL, ie. LIKE '%<querystring\>%'<br/>
 <br/>
 <b>UPDATE:</b> Use HTTP method PUT to update a post in the database.<br/>
@@ -34,7 +34,7 @@ The REST API has been tested with Postman API Platform (desktop) against a MySQL
       <i>e.g.</i> <code>../index.php?id=23</code><br/>
 <br/>
 
-<b>Keys, Reqiured Keys, Unique Keys</b><br/>
+<b>Keys, Required Keys, Unique Keys</b><br/>
 The keys, required keys and unique keys, all located in the Controller Class, are specified in order to uphold a functional logic in the database.
 
 You can of cause modify the entire suite of keys to adapt to your needs.
