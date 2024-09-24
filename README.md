@@ -35,8 +35,7 @@ The REST API has been tested with Postman API Platform (desktop) against a MySQL
 <br/>
 
 <b>Keys, Reqiured Keys, Unique Keys</b><br/>
-<br/>
-The keys, required keys and unique keys, all located in the Controller Class, are specified in order to uphold the functional logic in the database.
+The keys, required keys and unique keys, all located in the Controller Class, are specified in order to uphold a functional logic in the database.
 
 You can of cause modify the entire suite of keys to adapt to your needs.
 <hr/>
