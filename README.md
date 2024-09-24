@@ -1,6 +1,6 @@
 <h3>REST API (CRUD) - with the ability to do a string search as well</h3>
 Design Pattern: MVC (Model, View, Controller)<br/>
-Author: Brian Ravn Pedersen.<br/>
+Author: Brian Ravn Pedersen<br/>
 Created: 2024-09-18<br/>
 Files: index.php, Database.php, Model.php, Controller.php<br/>
 Languages used: PHP, SQL (ANSI)<br/>
@@ -12,11 +12,11 @@ Repository: github.com/brp-labs/rest-api<br/>
 
 <b>CREATE:</b> Use HTTP method: POST<br/>
     Send body in JSON-format with at leats the required keys (username, email):<br/>
-      e.g. <code>{ "username": "John Doe", "email": "<span>john@doe.com</span>", "entity": "Business Intelligence" }</code><br/>
+      e.g. <code>{ "username": "John Doe", "email": "<code>john@doe.com</code>", "entity": "Business Intelligence" }</code><br/>
 <br/>
 <b>READ:</b> Use HTTP method: GET. Response is returned in JSON-format.<br/>
     Read single post (with id=23):<br/>
-``` e.g. <code>../index.php?id=23</code><br/>
+    e.g. <code>../index.php?id=23</code><br/>
     Read all posts:<br/>
       e.g. <code>../index.php</code><br/>
     Search for posts with q-key:<br/>
