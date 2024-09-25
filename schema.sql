@@ -8,7 +8,7 @@ CREATE DATABASE db;
 -- Batch #2: Switch to the database.
 USE db;
 
--- Batch #3: Create the table named 'users' with the specified columns, datatypes and constraints.
+-- Batch #3: Create the table named 'users' with the specified columns, data types and constraints.
 CREATE TABLE users (
     id int NOT NULL AUTO_INCREMENT, 
     user_id varchar(255),
