@@ -10,11 +10,11 @@
       'GitHub' => 'github.com/brp-labs/rest-api'
       ];
 
-    private static $keys = ['id', 'entitycode', 'entity', 'user_id', 'username', 'email']; 
+    private static $keys = ['id', 'user_id', 'username', 'email', 'entity', 'entitycode']; 
 
     private static $requiredKeys = ['username', 'email'];
     
-    private static $uniqueKeys = ['username', 'email', 'user_id'];
+    private static $uniqueKeys = ['user_id', 'username', 'email'];
 
     private $model; // class instance
 
@@ -82,23 +82,6 @@
       } 
     }
 
-    // Read all posts
-    public function read_all() {
-      $result = $this->model->read_all();
-      if ($result->rowCount() > 0) {
-        $posts['Info'] = self::$header;
-        $posts['Data'] = [];
-        while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-          array_push($posts['Data'], $row);
-        }
-        http_response_code(200); // OK
-        echo json_encode($posts);
-      } else {
-        http_response_code(404); // Not Found
-        echo json_encode(["Message" => "No posts found."]);
-      }
-    }
-
     // Read single post
     public function read_single($id) {
       $backtrace = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT);
@@ -118,7 +101,42 @@
       }
       return false;
     }
-
+    
+    // Read all posts
+    public function read_all() {
+      $result = $this->model->read_all();
+      if ($result->rowCount() > 0) {
+        $posts['Info'] = self::$header;
+        $posts['Data'] = [];
+        while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+          array_push($posts['Data'], $row);
+        }
+        http_response_code(200); // OK
+        echo json_encode($posts);
+      } else {
+        http_response_code(404); // Not Found
+        echo json_encode(["Message" => "No posts found."]);
+      }
+    }
+    
+    // Search post
+    public function search($search) {
+      $search = self::sanitize($search);
+      $result = $this->model->search($search);
+      if ($result->rowCount() > 0) {
+        $posts['Info'] = self::$header;
+        $posts['Data'] = [];
+        while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+          array_push($posts['Data'], $row);
+        }
+        http_response_code(200); // OK
+        echo json_encode($posts);
+      } else {
+        http_response_code(404); // Not Found
+        echo json_encode(["Message:" => "No posts found."]);
+      }
+    }
+    
     // Update post
     public function update($data) {
       if (isset($data['id'])) {
@@ -164,22 +182,5 @@
       }
     }
     
-    // Search post
-    public function search($search) {
-      $search = self::sanitize($search);
-      $result = $this->model->search($search);
-      if ($result->rowCount() > 0) {
-        $posts['Info'] = self::$header;
-        $posts['Data'] = [];
-        while($row = $result->fetch(PDO::FETCH_ASSOC)) {
-          array_push($posts['Data'], $row);
-        }
-        http_response_code(200); // OK
-        echo json_encode($posts);
-      } else {
-        http_response_code(404); // Not Found
-        echo json_encode(["Message:" => "No posts found."]);
-      }
-    }
     
   } // end: class Controller

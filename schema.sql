@@ -5,7 +5,7 @@
 -- Batch #1: Create the database named 'db'.
 CREATE DATABASE db;
 
--- Batch #2: Switch to the database:
+-- Batch #2: Switch to the database.
 USE db;
 
 -- Batch #3: Create the table named 'users' with the specified columns, datatypes and constraints.

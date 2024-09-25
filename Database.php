@@ -9,7 +9,7 @@
     private $password = '';
 
     // Table used in the database
-    public static $table = '_users';
+    public static $table = 'users';
 
     // Connect to database
     public function connect() {
