@@ -1,12 +1,12 @@
 <h3>REST API (CRUD) - with the ability to perform string searches as well</h3>
-Design Pattern: MVC (Model, View, Controller)<br/>
-Author: Brian Ravn Pedersen<br/>
-Created: 2024-09-18<br/>
-Files: index.php, schema.sql, Database.php, Model.php, Controller.php, README.md. LICENSE.txt<br/>
-Languages used: PHP, SQL<br/>
-Repository: github.com/brp-labs/rest-api<br/>
+<b>Design Pattern:</b> MVC (Model, View, Controller)<br/>
+<b>Author:</b> Brian Ravn Pedersen<br/>
+<b>Created:</b> 2024-09-18<br/>
+<b>Files:</b> index.php, schema.sql, Database.php, Model.php, Controller.php, README.md. LICENSE.txt<br/>
+<b>Languages used:</b> PHP, SQL<br/>
+<b>Repository:</b> github.com/brp-labs/rest-api<br/>
 <br/>
-The REST API has been tested with Postman API Platform (desktop) against a MySQL database (MariaDB) running on a local server (Apache/XAMPP).
+The REST API has been tested with <b>Postman API Platform</b> (desktop) against a MySQL database (MariaDB) running on a local server (Apache/XAMPP).
 
 <hr/>
 
