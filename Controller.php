@@ -2,15 +2,16 @@
 
   class Controller {
 
+    private static $timezone = 'Europe/Copenhagen';
+    private static $timestamp;
+
     // Header used for transferring metadata with the dataset
     private static $header = [
-      'Product' => 'REST API (CRUD)',
-      'Version' => '1.0.0',
-      'Author' => 'Brian Ravn Pedersen',
-      'Created' => '2024-09-18',
-      'GitHub' => 'github.com/brp-labs/rest-api'
+      'Application used' => 'REST API (CRUD) at the GitHub Repository: https://github.com/brp-labs/rest-api',
+      'Dataset created' => null,
+      'Number of posts in dataset' => null
       ];
-
+      
     private static $keys = ['id', 'user_id', 'username', 'email', 'entity', 'entitycode']; 
 
     private static $requiredKeys = ['username', 'email'];
@@ -24,6 +25,13 @@
       $this->model = new Model($db);
     }
 
+    // Create a timestamp to be used in the header when returning a dataset
+    private static function getCurrentTimestamp() {
+      $timezone = new DateTimeZone(self::$timezone);
+      self::$timestamp = (new DateTime('now', $timezone))->format('Y-m-d H:i:s');
+      self::$header['Dataset created'] = self::$timestamp;
+    }
+  
     // Validate uniqueness of content (value) of unique keys
     private function validateUniqueKeys($data) {
       foreach(self::$uniqueKeys as $uniqueKey) {
@@ -87,8 +95,11 @@
     public function read_single($id) {
       $backtrace = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT);
       $result = $this->model->read_single($id);
-      if ($result->rowCount() > 0) {
-        $post['Info'] = self::$header;
+      $rowCount = $result->rowCount();
+      if ($rowCount > 0) {
+        self::$header['Number of posts in dataset'] = $rowCount;
+        self::getCurrentTimestamp();
+        $post['Header'] = self::$header;
         $post['Data'] = $result->fetch(PDO::FETCH_ASSOC);
         http_response_code(200); // OK
         // Check if read_single is called from within the current class
@@ -106,8 +117,11 @@
     // Read all posts
     public function read_all() {
       $result = $this->model->read_all();
-      if ($result->rowCount() > 0) {
-        $posts['Info'] = self::$header;
+      $rowCount = $result->rowCount();
+      if ($rowCount > 0) {
+        self::$header['Number of posts in dataset'] = $rowCount;
+        self::getCurrentTimestamp();
+        $posts['Header'] = self::$header;
         $posts['Data'] = [];
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
           array_push($posts['Data'], $row);
@@ -124,8 +138,11 @@
     public function search($search) {
       $search = self::sanitize($search);
       $result = $this->model->search($search);
-      if ($result->rowCount() > 0) {
-        $posts['Info'] = self::$header;
+      $rowCount = $result->rowCount();
+      if ($rowCount > 0) {
+        self::$header['Number of posts in dataset'] = $rowCount;
+        self::getCurrentTimestamp();
+        $posts['Header'] = self::$header;
         $posts['Data'] = [];
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
           array_push($posts['Data'], $row);
