@@ -1,6 +1,6 @@
 <h3>REST API (CRUD) - with the ability to perform string searches as well</h3>
 <b>Design Pattern:</b> MVC (Model, View, Controller)<br/>
-<b>Author:</b> Brian Ravn Pedersen<br/>
+<b>Author:</b> Brian Ravn Pedersen, Data Engineer and Software Developer<br/>
 <b>Created:</b> 2024-09-18<br/>
 <b>Files:</b> index.php, schema.sql, Database.php, Model.php, Controller.php, README.md. LICENSE.txt<br/>
 <b>Languages used:</b> PHP, SQL<br/>
