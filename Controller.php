@@ -2,6 +2,7 @@
 
   class Controller {
 
+    // Header used for transferring metadata with the dataset
     private static $header = [
       'Product' => 'REST API (CRUD)',
       'Version' => '1.0.0',
