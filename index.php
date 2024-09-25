@@ -1,12 +1,11 @@
 <?php
 
 /* 
-    REST API (CRUD) - with the ability to do a string search as well.
+    REST API (CRUD) - with the ability to perform string searches as well.
     Design Pattern: MVC (Model, View, Controller)
-    Author: Brian Ravn Pedersen
+    Author: Brian Ravn Pedersen, Data Engineer and Software Developer
     Created: 2024-09-18
-    Files: index.php, Database.php, Model.php, Controller.php
-    Repository: github.com/brp-labs/rest-api
+    GitHub Repository: https://github.com/brp-labs/rest-api
     ______________________________________________________________
 */
     
