@@ -37,10 +37,10 @@ The REST API has been tested with <b>Postman API Platform</b> (desktop) against 
 The keys, required keys, and unique keys, all declared in the <b>Controller Class</b>, are specified in order to uphold functional logic in the database.<br/> 
 
 <br/>
-<b>Keys:</b> The keys refer to the columns in the table 'users' (cf. the file: <code>schema.sql</code>). The keys are: <code>id</code>, <code>user_id</code>, <code>username</code>, <code>email</code>, <code>entity</code>, <code>entitycode</code>. The <code>id</code>, however, is the primary key and is used for auto-incrementing by the database.<br/>
+<b>Keys:</b> The keys refer to the columns in the table <code>users</code> (cf. the file: <code>schema.sql</code>). The keys are: <code>id</code>, <code>user_id</code>, <code>username</code>, <code>email</code>, <code>entity</code>, <code>entitycode</code>. The <code>id</code>, however, is the primary key and is used for auto-incrementing by the database.<br/>
 
 <br/>
-<b>Required Keys:</b> The required keys are those that must be declared when creating a new post in the 'users' table. The required keys cannot be empty (<i>i.e.,</i> NULL). Some content for these keys is mandatory. The required keys are: <code>username</code>, <code>email</code>.<br/>
+<b>Required Keys:</b> The required keys are those that must be declared when creating a new post in the <code>users</code> table. The required keys cannot be empty (<i>i.e.,</i> NULL). Some content for these keys is mandatory. The required keys are: <code>username</code>, <code>email</code>.<br/>
 
 <br/>
 <b>Unique Keys:</b> The unique keys do not need to be declared when a new post is created. Their default value on table creation is NULL. However, if a unique key is used, the key must have its own content (value). Two different posts are not allowed to have the same unique key with identical content (value). In that sense, a unique key must have unique content (value). However, multiple posts can have the same unique key's content set to NULL without violating the uniqueness rule. The unique keys are:  <code>user_id</code>, <code>username</code>, <code>email</code>.<br/>
