@@ -4,7 +4,7 @@
 <b>Created:</b> 2024-09-18<br/>
 <b>Files:</b> index.php, schema.sql, Database.php, Model.php, Controller.php, README.md. LICENSE.txt<br/>
 <b>Languages used:</b> PHP, SQL<br/>
-<b>Repository:</b> github.com/brp-labs/rest-api<br/>
+<b>GitHub Repository:</b> https://github.com/brp-labs/rest-api<br/>
 <br/>
 The REST API has been tested with <b>Postman API Platform</b> (desktop) against a MySQL database (MariaDB) running on a local server (Apache/XAMPP).
 
