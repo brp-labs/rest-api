@@ -6,7 +6,7 @@
     Author: Brian Ravn Pedersen, Data Engineer and Software Developer
     Created: 2024-09-18
     GitHub Repository: https://github.com/brp-labs/rest-api
-    ______________________________________________________________
+    ______________________________________________________________________
 */
     
   // Headers
