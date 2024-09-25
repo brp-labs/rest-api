@@ -53,7 +53,7 @@
       return htmlspecialchars(strip_tags(trim($string)));
     }
 
-    // Create post
+    // Create a post
     public function create($data) {
       if ($data) {
         $keysValidated = self::validateRequiredKeys($data); // Required keys
@@ -82,7 +82,7 @@
       } 
     }
 
-    // Read single post
+    // Read a single post
     public function read_single($id) {
       $backtrace = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT);
       $result = $this->model->read_single($id);
@@ -119,7 +119,7 @@
       }
     }
     
-    // Search post
+    // Search for posts
     public function search($search) {
       $search = self::sanitize($search);
       $result = $this->model->search($search);
@@ -137,7 +137,7 @@
       }
     }
     
-    // Update post
+    // Update a post
     public function update($data) {
       if (isset($data['id'])) {
         $existingPost = $this->read_single($data['id']); // Type: array
@@ -169,7 +169,7 @@
       }  
     }
 
-    // Delete post
+    // Delete a post
     public function delete($id) {
       $id = self::sanitize($id);
       $result = $this->model->delete($id);

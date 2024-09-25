@@ -27,7 +27,7 @@
       }
     }
 
-    // Create post
+    // Create a post
     public function create($entitycode, $entity, $user_id, $username, $email) {
       $sql = "INSERT INTO $this->table (entitycode, entity, user_id, username, email) VALUES (:entitycode, :entity, :user_id, :username, :email)";
       $stmt = $this->conn->prepare($sql);
@@ -48,7 +48,7 @@
       return false;
     }
     
-    // Read single post
+    // Read a single post
     public function read_single($id) {
       $sql = "SELECT * FROM $this->table WHERE id = :id LIMIT 1";
       $stmt = $this->conn->prepare($sql);
@@ -65,7 +65,7 @@
       return $stmt;
     }
     
-    // Search post (by the properties 'username' and 'email')
+    // Search for posts (by the properties 'username' and 'email')
     public function search($search) {
       $sql = "SELECT * FROM $this->table WHERE username LIKE :username OR email LIKE :email";
       $stmt = $this->conn->prepare($sql);
@@ -75,7 +75,7 @@
       return $stmt;
     }
 
-    // Update post
+    // Update a post
     public function update($id, $entitycode, $entity, $user_id, $username, $email) {
       $sql = "UPDATE $this->table SET entitycode = :entitycode, entity = :entity, user_id = :user_id, username = :username, email = :email WHERE id = :id";
       $stmt = $this->conn->prepare($sql);
@@ -97,7 +97,7 @@
       return false;
     }
 
-    // Delete post
+    // Delete a post
     public function delete($id) {
       $sql = "DELETE FROM $this->table WHERE id = :id";
       $stmt = $this->conn->prepare($sql);
