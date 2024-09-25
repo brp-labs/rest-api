@@ -2,7 +2,6 @@
 
 -- The following batches are written in standard SQL (ANSI) and supposed to be run in phpMyAdmin or the MySQL CLI on the local server.
 
-
 -- Batch #1: Create the database named 'db':
 CREATE DATABASE db;
 
