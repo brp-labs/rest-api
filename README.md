@@ -50,7 +50,7 @@ The keys, required keys, and unique keys, all declared in the <b>Controller Clas
 
 <br/>
 <h3>Database Configuration</h3>
-The database configuration is shown in the <b>Database Class</b> file.
+The database configuration is shown in the <b>Database Class</b> file. The file <code>schema.sql</code> contains the sequence of SQL code used to create the database and the table, including its columns and specifications.
 
 <br/>
 <h3>License</h3>
