@@ -39,19 +39,19 @@
   // Routing
   switch ($method) {
 
-    // POST -> Create post
+    // POST -> Create a post
     case 'POST':
       $data = json_decode(file_get_contents('php://input')); // Type: object
       $controller->create((array)$data); // Cast into an array
       break;
       
-    // GET -> Read single post, Search posts, Read all posts
+    // GET -> Read a single post, Search for posts, Read all posts
     case 'GET':
-      // Read single post
+      // Read a single post
       if (isset($_GET['id'])) {
         $id = $_GET['id'];
         $post = $controller->read_single($id);
-      // Search posts  
+      // Search for posts  
       } elseif (isset($_GET['q']))  {
         $search = $_GET['q'];
         $posts = $controller->search($search);
@@ -61,13 +61,13 @@
       }
       break;
 
-    // PUT -> Update post
+    // PUT -> Update a post
     case 'PUT':
       $data = json_decode(file_get_contents('php://input'), true);
       $controller->update($data);
       break;
 
-    // DELETE -> Delete post
+    // DELETE -> Delete a post
     case 'DELETE':
       if (isset($_GET['id'])) {
         $id = $_GET['id'];
