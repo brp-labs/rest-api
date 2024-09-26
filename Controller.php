@@ -5,8 +5,8 @@
     private static $timezone = 'Europe/Copenhagen';
     private static $timestamp;
 
-    // Header used for transferring metadata with the dataset
-    private static $header = [
+    // A separate array for transferring the metadata associated with the dataset.
+    private static $info = [
       'Application used' => 'REST API (CRUD) at the GitHub Repository: https://github.com/brp-labs/rest-api',
       'Dataset created' => null,
       'Number of posts in dataset' => null
@@ -29,7 +29,7 @@
     private static function getCurrentTimestamp() {
       $timezone = new DateTimeZone(self::$timezone);
       self::$timestamp = (new DateTime('now', $timezone))->format('Y-m-d H:i:s');
-      self::$header['Dataset created'] = self::$timestamp;
+      self::$info['Dataset created'] = self::$timestamp;
     }
   
     // Validate uniqueness of content (value) of unique keys
@@ -97,9 +97,9 @@
       $result = $this->model->read_single($id);
       $rowCount = $result->rowCount();
       if ($rowCount > 0) {
-        self::$header['Number of posts in dataset'] = $rowCount;
+        self::$info['Number of posts in dataset'] = $rowCount;
         self::getCurrentTimestamp();
-        $post['Header'] = self::$header;
+        $post['Info'] = self::$info;
         $post['Data'] = $result->fetch(PDO::FETCH_ASSOC);
         http_response_code(200); // OK
         // Check if read_single is called from within the current class
@@ -119,9 +119,9 @@
       $result = $this->model->read_all();
       $rowCount = $result->rowCount();
       if ($rowCount > 0) {
-        self::$header['Number of posts in dataset'] = $rowCount;
+        self::$info['Number of posts in dataset'] = $rowCount;
         self::getCurrentTimestamp();
-        $posts['Header'] = self::$header;
+        $posts['Info'] = self::$info;
         $posts['Data'] = [];
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
           array_push($posts['Data'], $row);
@@ -140,9 +140,9 @@
       $result = $this->model->search($search);
       $rowCount = $result->rowCount();
       if ($rowCount > 0) {
-        self::$header['Number of posts in dataset'] = $rowCount;
+        self::$info['Number of posts in dataset'] = $rowCount;
         self::getCurrentTimestamp();
-        $posts['Header'] = self::$header;
+        $posts['Info'] = self::$info;
         $posts['Data'] = [];
         while($row = $result->fetch(PDO::FETCH_ASSOC)) {
           array_push($posts['Data'], $row);
