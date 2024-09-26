@@ -53,6 +53,11 @@ The keys, required keys, and unique keys, all declared in the <b>Controller Clas
 The database configuration is shown in the <b>Database Class</b> file. The file <code>schema.sql</code> contains the sequence of SQL code used to create the database and the table, including its columns and specifications.
 
 <br/>
+<h3>Metadata</h3>
+Whenever a dataset is returned from the database as a result of reading a single post, reading all posts, or searching for one or more posts, a separate array is inserted right before the dataset array. This separate array at the very top, called <code>Info</code>, gives a timestamp and the number of posts returned from the database. The timezone used is set at the top of the <b>Controller Class</b> and is default set to 'Europe/Copenhagen'. And, of course, the timezone should be adjusteed if the application runs in a different timezone. The array containing the dataset, by the way, is called <code>Data</code>. 
+
+
+<br/>
 <h3>License</h3>
 Anyone who would like to use this REST API can do so and, of course, modify the code, the database configuration, and the list of different keys as well, in order to adapt it to one's actual needs - in compliance with the content of the attached LICENSE file.
 
