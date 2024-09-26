@@ -2,7 +2,7 @@
 <b>Design Pattern:</b> MVC (Model, View, Controller)<br/>
 <b>Author:</b> Brian Ravn Pedersen, Data Engineer and Software Developer<br/>
 <b>Created:</b> 2024-09-18<br/>
-<b>Files:</b> index.php, schema.sql, Database.php, Model.php, Controller.php, README.md. LICENSE.txt<br/>
+<b>Files:</b> index.php, schema.sql, Controller.php, Database.php, Model.php, README.md. LICENSE.txt<br/>
 <b>Languages used:</b> PHP, SQL<br/>
 <b>GitHub Repository:</b> https://github.com/brp-labs/rest-api<br/>
 <br/>
@@ -63,5 +63,5 @@ Anyone who would like to use this REST API can do so and, of course, modify the 
 
 <br/>
 <hr/>
- 
+
 
