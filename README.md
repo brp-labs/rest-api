@@ -2,7 +2,7 @@
 <b>Design Pattern:</b> MVC (Model, View, Controller)<br/>
 <b>Author:</b> Brian Ravn Pedersen, Data Engineer and Software Developer<br/>
 <b>Created:</b> 2024-09-18<br/>
-<b>Files:</b> index.php, schema.sql, Controller.php, Database.php, Model.php, README.md. LICENSE.txt<br/>
+<b>Files:</b> index.php, schema.sql, Controller.php, Database.php, Model.php, README.md, LICENSE.txt<br/>
 <b>Languages used:</b> PHP, SQL<br/>
 <b>GitHub Repository:</b> https://github.com/brp-labs/rest-api<br/>
 <br/>
@@ -50,7 +50,7 @@ The keys, required keys, and unique keys, all declared in the <b>Controller Clas
 
 <br/>
 <h3>Database Configuration</h3>
-The database configuration is shown in the <b>Database Class</b> file. The file <code>schema.sql</code> contains the sequence of SQL code used to create the database and the table, including its columns and specifications.
+The database configuration is shown in the <b>Database Class</b> file. The file <code>schema.sql</code> contains the sequence of SQL batches used to create the database and the table, including its columns and specifications.
 
 <br/>
 <h3>Metadata</h3>
